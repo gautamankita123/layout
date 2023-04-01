@@ -1,0 +1,40 @@
+<html>
+<head>
+<body>
+<form onsubmit= 'saveToLocalStorage(event)'>
+<label> Name </lable>
+<input type="text" name='usernm'  required/>
+<label> EmailId</lable>
+<input type="emailId" name='emailId' required/>
+<label> Phone Number</lable>
+<input type="tel" name="phonenumber" />
+<button> Submit </button>
+</form>
+<ul id='listOfitem'></ul>
+<script>
+function saveToLocalStorage(event) {
+event.preventDefault();
+const name = event.target.usernm.value;
+const emailId = event.target.emailId.value;
+const phonenumber = event.target.phonenumber.value;
+
+
+const obj = {
+name,
+email,
+phonenumber
+}
+localStorage.setItem(obj.email.JSON.stringify(obj))
+showUserOnScreen(obj)
+}
+function showUserOnScreen(obj){
+const parentElon = documenty.getElementById('listOfitems')
+/**const childElon = document.createElement('li')
+childElon.textContent = obj.name + ' - ' + obj.email + ' - ' + **/
+parentElon.innerHTML = '<li>$(obj.name) - $(obj.email) - $(obj.phonenumber)</li>'
+}
+
+</script>
+</body>
+</head>
+</html>
